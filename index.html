@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David Hyesung Lee</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/2ca8dfbdd4.js" crossorigin="anonymous"></script>
+    <script src="/script.js" defer></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "Tm6Iprbt_C_bjR5MN",
+            });
+        })();
+    </script>
+</head>
+
+<body>
+    <section id="landing" onmousemove="moveBackground(event)">
+        <nav>
+            <img src="assets/logo.png" alt="DL logo" class="logo">
+            <ul class="nav__link--list">
+                <li class="nav__link--item">
+                    <a href="#" onclick="toggleModal(), toggleAboutModal()">About</a>
+                </li>
+                <li class="nav__link--item">
+                    <a href="#projects">Projects</a>
+                </li>
+                <li class="nav__link--item">
+                    <a href="#" onclick="toggleModal(), toggleContactModal()">Contact</a>
+                </li>
+                <li class="nav__link--item">
+                    <a href="#" onclick="toggleContrast()">
+                        <i class="fa-solid fa-circle-half-stroke"></i>
+                    </a>
+                </li>
+            </ul>
+            <button class="btn__menu" onclick="openMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="menu__backdrop">
+                <button class="btn__menu btn__menu--close" onclick="closeMenu()">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="btn__menu--list">
+                    <a href="#" class="btn__menu--item" onclick="closeMenu(), toggleModal(), toggleAboutModal()">About</a>
+                    <a href="#projects" class="btn__menu--item" onclick="closeMenu()">Projects</a>
+                    <a href="#" class="btn__menu--item" onclick="closeMenu(), toggleModal(), toggleContactModal()">Contact</a>
+                    <div class="btn__menu--item light__button" onclick="closeMenu(), toggleContrast()">Dark Mode</div>
+                    <div class="btn__menu--item dark__button" onclick="closeMenu(), toggleContrast()">Light Mode</div>
+                </div>
+            </div>
+        </nav>
+        <div class="landing__content">
+            <h1 class="landing__content--title">Hey <br><b class="text--orange">I'm David.</b></h1>
+            <p class="landing__content--description">
+                I'm a <b class="text--orange">frontend software engineer</b> who loves to design and build innovative
+                web applications using various technologies! Here's a bit more <b class="text--orange click" onclick="toggleModal(), toggleAboutModal()">about me.</b>
+            </p>
+            <ul class="landing__content--links">
+                <li>
+                    <a href="https://www.linkedin.com/in/dvdhyelee/" class="landing__content--link" id="link1">
+                        <i class="fa-brands fa-linkedin-in landing__content--link-img"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/DvdHLee" class="landing__content--link" id="link2">
+                        <i class="fa-brands fa-github landing__content--link-img"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="assets/resume.pdf" target="_blank" class="landing__content--link" id="link3">
+                        <i class="fa-regular fa-file-pdf landing__content--link-img"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <button class="mail__btn">
+            <a href="#" onclick="toggleModal(), toggleContactModal()">
+                <i class="fa-solid fa-envelope mail__btn--link"></i>
+            </a>
+        </button>
+        <a href="#projects" class="scroll">
+            <div class="scroll__icon click"></div>
+        </a>
+        <div class="modal modal__original">
+            <div class="modal__half modal__about">
+                <h2 class="modal__title">Here's a bit about me.</h2>
+                <h2 class="modal__subtitle">Frontend Software Engineer</h2>
+                <p class="modal__description">I'm a 27 year-old <b class="text--orange">frontend software engineer</b>
+                    with a strong passion for developing websites with great user experiences.
+                    <br> I have a varied background with experience in engineering, trading, teaching, and more! I
+                    currently live in Phoenix, Arizona, but I am always open to new experiences!
+                </p>
+                <div class="languages" id="languages">
+                    <div class="language__list">
+                        <div class="language">
+                            <img src="assets/html.png" alt="html icon" class="language__icon">
+                            <span class="language__name">HTML</span>
+                        </div>
+                        <div class="language">
+                            <img src="assets/css-3.png" alt="css icon" class="language__icon">
+                            <span class="language__name">CSS</span>
+                        </div>
+                        <div class="language">
+                            <img src="assets/js.png" alt="js icon" class="language__icon">
+                            <span class="language__name">JavaScript</span>
+                        </div>
+                        <div class="language">
+                            <img src="assets/typescript.png" alt="typescript icon" class="language__icon">
+                            <span class="language__name">TypeScript</span>
+                        </div>
+                        <div class="language">
+                            <img src="assets/react.png" alt="react icon" class="language__icon">
+                            <span class="language__name">React</span>
+                        </div>
+                        <div class="language">
+                            <img src="assets/java.png" alt="java icon" class="language__icon">
+                            <span class="language__name">Java</span>
+                        </div>
+                        <div class="language">
+                            <img src="assets/python.png" alt="python icon" class="language__icon">
+                            <span class="language__name">Python</span>
+                        </div>
+                        <div class="language">
+                            <img src="assets/wordpress.png" alt="wordpress icon" class="language__icon">
+                            <span class="language__name">WordPress</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal__half modal__contact">
+                <h2 class="modal__title">Let's have a chat!</h2>
+                <h2 class="modal__subtitle">I'm currently open to new opportunities.</h2>
+                <form action="" class="contact__form" onsubmit="contact(event)">
+                    <div class="form__item">
+                        <label for="user_name" class="form__item--label">Name</label>
+                        <input type="text" name="user_name" class="input" id="user_name" required></input>
+                    </div>
+                    <div class="form__item">
+                        <label for="user_email" class="form__item--label">Email</label>
+                        <input type="email" name="user_email" class="input" id="user_email" required></input>
+                    </div>
+                    <div class="form__item">
+                        <label for="message" class="form__item--label">Message</label>
+                        <textarea type="text" name="message" class="input" id="message" required></textarea>
+                    </div>
+                    <button id="contact__submit" class="form__submit">Send it my way</button>
+                </form>
+                <div class="modal__overlay modal__overlay--loading">
+                    <i class="fas fa-spinner"></i>
+                </div>
+                <div class="modal__overlay modal__overlay--success">Thanks for the message! Looking forward to
+                    connecting.</div>
+                <i class="fas fa-times modal__exit click" onclick="closeModal()"></i>
+            </div>
+        </div>
+        <div class="modal__overlay--exit" onclick="closeModal()"></div>
+        <div class="modal modal__about--mobile">
+            <div class="modal__half modal__about">
+                <h2 class="modal__title">Here's a bit about me.</h2>
+                <h2 class="modal__subtitle">Frontend Software Engineer</h2>
+                <p class="modal__description">I'm a 27 year-old <b class="text--orange">frontend software engineer</b>
+                    with a strong passion for developing websites with great user experiences.
+                    <br> I have a varied background with experience in engineering, trading, teaching, and more! I
+                    currently live in Phoenix, Arizona, but I am always open to new experiences!
+                </p>
+                <div class="languages" id="languages">
+                    <div class="language__list">
+                        <div class="language">
+                            <img src="assets/html.png" alt="html icon" class="language__icon">
+                            <span class="language__name">HTML</span>
+                        </div>
+                        <div class="language">
+                            <img src="assets/css-3.png" alt="css icon" class="language__icon">
+                            <span class="language__name">CSS</span>
+                        </div>
+                        <div class="language">
+                            <img src="assets/js.png" alt="js icon" class="language__icon">
+                            <span class="language__name">JavaScript</span>
+                        </div>
+                        <div class="language">
+                            <img src="assets/typescript.png" alt="typescript icon" class="language__icon">
+                            <span class="language__name">TypeScript</span>
+                        </div>
+                        <div class="language">
+                            <img src="assets/react.png" alt="react icon" class="language__icon">
+                            <span class="language__name">React</span>
+                        </div>
+                        <div class="language">
+                            <img src="assets/java.png" alt="java icon" class="language__icon">
+                            <span class="language__name">Java</span>
+                        </div>
+                        <div class="language">
+                            <img src="assets/python.png" alt="python icon" class="language__icon">
+                            <span class="language__name">Python</span>
+                        </div>
+                        <div class="language">
+                            <img src="assets/wordpress.png" alt="wordpress icon" class="language__icon">
+                            <span class="language__name">WordPress</span>
+                        </div>
+                    </div>
+                </div>
+                <i class="fas fa-times modal__exit click modal__exit--about" onclick="closeModal()"></i>
+            </div>
+        </div>
+        <div class="modal modal__contact--mobile">
+            <div class="modal__half modal__contact">
+                <h2 class="modal__title">Let's have a chat!</h2>
+                <h2 class="modal__subtitle">I'm currently open to new opportunities.</h2>
+                <form action="" class="contact__form" onsubmit="contact(event)">
+                    <div class="form__item">
+                        <label for="user_name" class="form__item--label">Name</label>
+                        <input type="text" name="user_name" class="input" id="user_name" required></input>
+                    </div>
+                    <div class="form__item">
+                        <label for="user_email" class="form__item--label">Email</label>
+                        <input type="email" name="user_email" class="input" id="user_email" required></input>
+                    </div>
+                    <div class="form__item">
+                        <label for="message" class="form__item--label">Message</label>
+                        <textarea type="text" name="message" class="input" id="message" required></textarea>
+                    </div>
+                    <button id="contact__submit" class="form__submit">Send it my way</button>
+                </form>
+                <div class="modal__overlay modal__overlay--loading">
+                    <i class="fas fa-spinner"></i>
+                </div>
+                <div class="modal__overlay modal__overlay--success">Thanks for the message! Looking forward to
+                    connecting.</div>
+                <i class="fas fa-times modal__exit click" onclick="closeModal()"></i>
+            </div>
+        </div>
+        <img src="assets/semi circle.svg" class="shape shape--0">
+        <img src="assets/circle.svg" class="shape shape--1">
+        <img src="assets/squiggly.svg" class="shape shape--2">
+        <img src="assets/circle.svg" class="shape shape--3">
+        <img src="assets/triangle.svg" class="shape shape--4">
+        <img src="assets/circle.svg" class="shape shape--5">
+        <img src="assets/squiggly.svg" class="shape shape--6">
+        <img src="assets/circle.svg" class="shape shape--7">
+        <img src="assets/semi circle.svg" class="shape shape--8">
+
+    </section>
+    <section id="projects">
+        <div class="projects__content">
+            <h1 class="projects__title">Here are some of my <span class="text--orange">projects</span></h1>
+            <ul class="projects__list">
+                <li class="project">
+                    <div class="project__wrapper">
+                        <img src="assets/mcsnapshot.png" class="snapshot" alt="mc snapshot">
+                        <div class="project__description">
+                            <h3 class="project__description__title">Meal Chewser</h3>
+                            <h4 class="project__description__subtitle">React, Google API</h4>
+                            <p class="project__description__para">Meal Chewser is a random restaurant generator designed
+                                to make deciding where to eat fun and stress free. All you have to do is simply
+                                type in a location and some optional filters, and it will automatically choose a
+                                restaurant for you! Mealchewser is a front end application
+                                built using React and Google APIs.</p>
+                            <div class="project__description__links">
+                                <div class="project__description__link">
+                                    <a href="https://github.com/arizonaCoderz/meal-chewser" target="_blank">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                                <div class="project__description__link">
+                                    <a href="https://arizonacoderz.github.io/meal-chewser/" target="_blank">
+                                        <i class="fas fa-link"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="project">
+                    <div class="project__wrapper">
+                        <img src="assets/moreorlesssnapshot.png" class="snapshot" alt="more or less snapshot">
+                        <div class="project__description">
+                            <h3 class="project__description__title">More or Less</h3>
+                            <h4 class="project__description__subtitle">React, HTML, CSS, JavaScript</h4>
+                            <p class="project__description__para">More or Less is a simple trivia game where you guess
+                                "more" or "less" on a given numerical statement. You can play 5 rounds per day
+                                and various statistics are logged automatically. Hard mode coming soon!</p>
+                            <div class="project__description__links">
+                                <div class="project__description__link">
+                                    <a href="https://github.com/DvdHLee/Moreorless" target="_blank">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                                <div class="project__description__link">
+                                    <a href="https://dvdhlee.github.io/Moreorless/" target="_blank">
+                                        <i class="fas fa-link"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="project">
+                    <div class="project__wrapper">
+                        <img src="assets/tttsnapshot.png" class="snapshot" alt="tic tac toe snapshot">
+                        <div class="project__description">
+                            <h3 class="project__description__title">Tic Tac Toe</h3>
+                            <h4 class="project__description__subtitle">React, Algorithms, Interactive</h4>
+                            <p class="project__description__para">This simple application lets you play against another
+                                player, a random bot, or a "smart" bot in the classic game of Tic Tac Toe. The
+                                smart bot utilizes a backtracking algorithm known as minimax to direct decision making
+                                to find the optimal move for any situation. Test
+                                your skills against the bots or pit them against each other!</p>
+                            <div class="project__description__links">
+                                <div class="project__description__link">
+                                    <a href="https://github.com/DvdHLee/TicTacToe" target="_blank">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                                <div class="project__description__link">
+                                    <a href="https://dvdhlee.github.io/TicTacToe/" target="_blank">
+                                        <i class="fas fa-link"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="project">
+                    <div class="project__wrapper">
+                        <img src="assets/oldportfoliosnapshot.png" class="snapshot" alt="old portfolio snapshot">
+                        <div class="project__description">
+                            <h3 class="project__description__title">My old portfolio</h3>
+                            <h4 class="project__description__subtitle">React, HTML, CSS, JavaScript</h4>
+                            <p class="project__description__para">A trip down memory lane! See the very first portfolio
+                                I ever made.</p>
+                            <div class="project__description__links">
+                                <div class="project__description__link">
+                                    <a href="https://github.com/DvdHLee/Portfolio" target="_blank">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                                <div class="project__description__link">
+                                    <a href="https://dvdhlee.github.io/Portfolio/" target="_blank">
+                                        <i class="fas fa-link"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <footer>
+        <div class="footer__content">
+            <div class="footer__logocontainer">
+                <a href="#" class="footer__anchor">
+                    <img src="assets/footerlogo.png" class="footer__logo" alt="footer logo">
+                    <span class="footer__logo__popper">
+                        Top
+                        <i class="fas fa-arrow-up"></i>
+                    </span>
+                </a>
+            </div>
+            <ul class="footer__social-links">
+                <li class="footer__social-link">
+                    <a href="https://linkedin.com/in/dvdhyelee/" target="_blank">LinkedIn</a>
+                </li>
+                <li class="footer__social-link">
+                    <a href="https://github.com/DvdHLee" target="_blank">GitHub</a>
+                </li>
+                <li class="footer__social-link">
+                    <a href="assets/resume.pdf" target="_blank">Resume</a>
+                </li>
+            </ul>
+            <p class="copyright">Copyright © 2024 David Hyesung Lee</p>
+        </div>
+    </footer>
+</body>
+
+</html>
